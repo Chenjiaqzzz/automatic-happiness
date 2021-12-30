@@ -1,0 +1,31 @@
+#include <Arduino.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+
+
+void WiFi_Connect()
+{
+  WiFi.begin("0102","zyk030820");
+  while (WiFi.status() !=WL_CONNECTED)
+  {
+    delay(300);
+    Serial.print(".");
+  }
+  
+}
+
+void setup() {
+  Serial.begin(115200);
+  delay(100);
+
+  Serial.print("Conneting......");
+
+  WiFi_Connect();
+
+  Serial.println("WiFi Connected");
+}
+
+void loop() {
+  
+}
